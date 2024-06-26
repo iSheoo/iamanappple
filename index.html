@@ -2,26 +2,42 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Video</title>
+    <title>Video con Título y Subtítulo</title>
     <style>
         body, html {
             margin: 0;
             padding: 0;
             height: 100%;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
+            background-color: #000000; /* Cambia este color de fondo según tu preferencia */
+        }
+        h1, h2 {
+            text-align: center;
+            margin: 0.5em 0;
+        }
+        h1 {
+            color: #333;
+        }
+        h2 {
+            color: #666;
         }
         video {
             max-width: 100%;
             max-height: 100%;
+            margin-top: 1em;
         }
     </style>
 </head>
 <body>
+    <h1>I'm an apple</h1>
+    <h2>You're not</h2>
     <video controls>
-        <source src="https://cdn.discordapp.com/attachments/971969461945008128/1255395158145499136/el_que_se_mueva_primero_es_gei.mp4?ex=667cf959&is=667ba7d9&hm=fe95e4012b1ab1c8179eee5dd4683eaecf1486644db42dd1ee41bb89a61c41d7&" type="video/mp4">
+        <source src="https://cdn.discordapp.com/attachments/971969461945008128/1255402447963295885/ssstik.io_when_eres_steve_1719354883099.mp4?ex=667d0023&is=667baea3&hm=85dbe4839cdf579f18a4978caaaf4e00fe954544601480ee5defa427a21a9323&" type="video/mp4">
         Tu navegador no soporta la etiqueta de video.
     </video>
 </body>
 </html>
+
