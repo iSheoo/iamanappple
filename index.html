@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video con Título y Perfil Personalizado</title>
+    <title>Audio con Título y Perfil Personalizado</title>
     <style>
         body, html {
             margin: 0;
@@ -61,12 +61,12 @@
             color: #cccccc;
             font-size: 24px;
         }
-        video {
-            max-width: 100%;
-            max-height: 100%;
+        .spotify-embed {
+            width: 100%;
+            height: 480px; /* Ajustar altura para mostrar más canciones */
             margin-top: 1em;
-            border-radius: 10px; 
-            cursor: pointer;
+            border-radius: 10px;
+            border: none;
         }
         .profile-info {
             display: flex;
@@ -99,7 +99,7 @@
             height: 200px;
             background-image: url('https://th.bing.com/th/id/OIP.o9zqycjv29eeUysrCB3qfgHaE7?rs=1&pid=ImgDetMain');
             background-size: cover;
-            background-position: relative;
+            background-position: center;
             position: relative;
             z-index: 0; 
             margin-bottom: 20px;
@@ -111,33 +111,26 @@
         <div class="overlay"></div>
         <div class="content">
             <div class="banner"></div>
-            <h1>I'm an apple</h1>
-            <h2>You're not</h2>
+            <h1>Soy una manzana</h1>
+            <h2>Tú no</h2>
             <div class="profile-info">
-                <img src="Imagenes para gifhub/saasas.png" alt="Foto de perfil" class="profile-picture"> 
+                <img src="Imagenes_para_gifhub/saasas.png" alt="Foto de perfil" class="profile-picture">
                 <div class="profile-details">
                     <div class="name">Sheo</div>
-                    <div class="bio">6 eggs por
-la mañana w</div>
+                    <div class="bio">6 huevos por la mañana</div>
                 </div>
             </div>
-            <video id="myVideo" width="560" height="315" controls autoplay loop onclick="togglePlay()">
-                <source src="Imagenes para gifhub/ssstik.io_@when_eres_steve_1719354883099.mp4" type="video/mp4"> 
-                Tu navegador no soporta el elemento de video.
-            </video>        
+            <iframe
+                title="Spotify Embed: Recommendation Playlist"
+                src="https://open.spotify.com/embed/playlist/1rnpls3itKIjq2NdnXc0ce?utm_source=generator&theme=0"
+                width="100%"
+                height="480"
+                frameborder="0"
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                class="spotify-embed"
+                loading="lazy">
+            </iframe>
         </div>
     </div>
-
-    <script>
-        var video = document.getElementById('myVideo');
-
-        function togglePlay() {
-            if (video.paused) {
-                video.play();
-            } else {
-                video.pause();
-            }
-        }
-    </script>
 </body>
 </html>
