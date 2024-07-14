@@ -27,7 +27,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(255, 255, 255, 0.1); /* Fondo negro semi-transparente */
+            background-color: rgb(0, 0, 0); /* Fondo negro semi-transparente */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -43,8 +43,8 @@
             align-items: flex-start;
             padding: 20px;
             max-width: 80%;
-            background-color: #000000; /* Fondo negro para el contenido */
-            border: 5px solid #ffffff; /* Contorno blanco */
+            background-color: #000215; /* Fondo negro para el contenido */
+            border: 5px solid #40E0D0; /* Contorno blanco */
             border-radius: 10px; /* Esquinas redondeadas */
             box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Sombra blanca */
         }
@@ -65,7 +65,8 @@
             max-width: 100%;
             max-height: 100%;
             margin-top: 1em;
-            border-radius: 10px; /* Esquinas redondeadas para el video */
+            border-radius: 10px; 
+            cursor: pointer;
         }
         .profile-info {
             display: flex;
@@ -76,7 +77,7 @@
             width: 150px;
             height: 150px;
             border-radius: 50%;
-            border: 5px solid #ffffff; /* Contorno blanco */
+            border: 5px solid #ffffff; 
             margin-right: 20px;
         }
         .profile-details {
@@ -98,9 +99,9 @@
             height: 200px;
             background-image: url('https://th.bing.com/th/id/OIP.o9zqycjv29eeUysrCB3qfgHaE7?rs=1&pid=ImgDetMain');
             background-size: cover;
-            background-position: center;
+            background-position: relative;
             position: relative;
-            z-index: 0; /* Detrás de todo el contenido */
+            z-index: 0; 
             margin-bottom: 20px;
         }
     </style>
@@ -113,16 +114,29 @@
             <h1>I'm an apple</h1>
             <h2>You're not</h2>
             <div class="profile-info">
-                <img src="https://i.imgur.com/unXMczx.png" alt="Foto de perfil" class="profile-picture">
+                <img src="Imagenes para gifhub/saasas.png" alt="Foto de perfil" class="profile-picture"> 
                 <div class="profile-details">
                     <div class="name">Sheo</div>
                     <div class="bio">penepepenepenepnepnepnepe.</div>
                 </div>
+            </div>
+            <video id="myVideo" width="560" height="315" controls autoplay loop onclick="togglePlay()">
+                <source src="Imagenes para gifhub/ssstik.io_@when_eres_steve_1719354883099.mp4" type="video/mp4"> 
+                Tu navegador no soporta el elemento de video.
+            </video>        
         </div>
-        <video width="560" height="315" controls autoplay loop>
-            <source src="Imagenes para gifhub/ssstik.io_@when_eres_steve_1719354883099.mp4" type="video/mp4">
-            Tu navegador no soporta el elemento de video.        
-        </video>        
     </div>
+
+    <script>
+        var video = document.getElementById('myVideo');
+
+        function togglePlay() {
+            if (video.paused) {
+                video.play();
+            } else {
+                video.pause();
+            }
+        }
+    </script>
 </body>
 </html>
