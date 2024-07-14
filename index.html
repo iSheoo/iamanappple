@@ -3,54 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video con Título y Perfil Personalizado</title>
     <style>
         body, html {
             margin: 0;
             padding: 0;
             height: 100%;
+            font-family: Arial, sans-serif;
+            position: relative;
+        }
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100%;
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
-            background-color: #3a3a3a; 
+            background-color: #000000; 
+        }
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8); 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1; 
+        }
+        .content {
+            position: relative;
+            z-index: 2; 
+            color: #ffffff; 
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 20px;
+            max-width: 80%;
         }
         h1, h2 {
             text-align: center;
             margin: 0.5em 0;
         }
         h1 {
-            color: #333;
+            color: #ffffff;
+            font-size: 36px;
+            font-weight: bold;
         }
         h2 {
-            color: #666;
+            color: #cccccc;
+            font-size: 24px;
         }
         video {
             max-width: 100%;
             max-height: 100%;
             margin-top: 1em;
+            border-radius: 10px; 
         }
-        .contact-form {
-            margin-top: 2em;
-            width: 300px;
-            text-align: center;
+        .profile-info {
+            display: flex;
+            align-items: flex-start;
+            margin-top: 20px;
         }
-        .contact-form input, .contact-form textarea {
-            width: 100%;
-            padding: 0.5em;
-            margin: 0.5em 0;
+        .profile-picture {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid #ffffff; 
+            margin-right: 20px;
         }
-        .contact-form button {
-            padding: 0.5em 1em;
-            background-color: #333;
-            color: #fff;
-            border: none;
-            cursor: pointer;
+        .profile-details {
+            display: flex;
+            flex-direction: column;
+            color: #ffffff;
         }
-        .contact-form button:hover {
-            background-color: #555;
+        .name {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
         }
-        
+        .bio {
+            font-size: 16px;
+            color: #cccccc;
+        }
         .banner {
             width: 100%;
             height: 200px;
@@ -58,45 +94,26 @@
             background-size: cover;
             background-position: center;
             position: relative;
-        }
-        .profile-picture {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            border: 5px solid #fff;
-            position: absolute;
-            bottom: -75px;
-            left: 20px;
-        }
-        .profile-info {
-            padding-top: 100px;
-            padding-left: 20px;
-        }
-        .name {
-            font-size: 24px;
-            font-weight: bold;
-        }
-        .bio {
-            font-size: 16px;
-            color: #666;
+            z-index: 0; 
+            margin-bottom: 20px;
         }
     </style>
 </head>
 <body>
-    <h1>Título del Video</h1>
-    <h2>Subtítulo del Video</h2>
-    <!-- Video de YouTube que se reproduce automáticamente -->
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/5176ESbyBHw?autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    <!-- Banner dinámico -->
-    <div class="banner"></div>
-    <!-- Información de perfil dinámica -->
-    <div class="profile-info">
-        <!-- Imagen de perfil dinámica -->
-        <img src="https://i.imgur.com/unXMczx.png" alt="Foto de perfil" class="profile-picture">
-        <!-- Nombre de usuario dinámico -->
-        <div class="name">Sheo</div>
-        <!-- Bio dinámica -->
-        <div class="bio">penepepenepenepnepnepnepe.</div>
+    <div class="container">
+        <div class="overlay"></div>
+        <div class="content">
+            <div class="banner"></div>
+            <h1>I'm an apple</h1>
+            <h2>You're not</h2>
+            <div class="profile-info">
+                <img src="https://imgur.com/VJboM5F" alt="Foto de perfil" class="profile-picture">
+                <div class="profile-details">
+                    <div class="name">Sheo</div>
+                    <div class="bio">penepepenepenepnepnepnepe.</div>
+                </div>
+        </div>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/5176ESbyBHw?autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
 </body>
 </html>
