@@ -27,11 +27,8 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgb(0, 0, 0); /* Fondo negro semi-transparente */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 1; /* Capa por encima del video y contenido */
+            background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+            z-index: 1; /* Capa por encima del contenido */
             border-radius: 10px; /* Esquinas redondeadas */
         }
         .content {
@@ -40,7 +37,7 @@
             color: #ffffff; /* Color de texto para el contenido */
             display: flex;
             flex-direction: column;
-            align-items: flex-start;
+            align-items: center;
             padding: 20px;
             max-width: 80%;
             background-color: #000215; /* Fondo negro para el contenido */
@@ -49,30 +46,29 @@
             box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Sombra blanca */
         }
         h1, h2 {
-            text-align: center;
-            margin: 0.5em 0;
+            text-align: center; /* Alinear texto al centro */
+            margin: 0.5em 0; /* Margen vertical */
         }
         h1 {
             color: #ffffff;
-            font-size: 36px;
+            font-size: 28px;
             font-weight: bold;
         }
         h2 {
             color: #cccccc;
-            font-size: 24px;
+            font-size: 18px;
         }
         .spotify-embed {
             width: 100%;
-            height: 480px; /* Ajustar altura para mostrar más canciones */
+            height: 480px; /* Altura fija para mostrar más canciones */
             margin-top: 1em;
             border-radius: 10px;
             border: none;
         }
         .profile-info {
             display: flex;
-            align-items: center;
+            align-items: center; /* Alinear elementos al centro */
             margin-top: 20px;
-            width: 100%;
         }
         .profile-picture {
             width: 150px;
@@ -84,27 +80,43 @@
         .profile-details {
             display: flex;
             flex-direction: column;
-            color: #ffffff;
-            flex-grow: 1;
+            align-items: flex-start;
+            margin-left: 20px; /* Margen izquierdo */
+        }
+        .profile-name {
+            margin-bottom: 10px; /* Separación entre h1/h2 y name */
+            width: 100%; /* Ajustar ancho para alinear h1/h2 correctamente */
+            text-align: center; /* Alinear texto al centro */
         }
         .name {
-            font-size: 24px;
+            font-size: 20px;
             font-weight: bold;
-            margin-bottom: 10px;
+            margin-top: 10px; /* Margen superior */
+            margin-bottom: 5px;
         }
         .bio {
-            font-size: 16px;
+            font-size: 14px;
             color: #cccccc;
+            margin-bottom: 10px;
+            text-align: center; /* Alinear texto al centro */
+        }
+        .data-test-id {
+            font-size: 12px;
+            color: #999999;
+            margin-top: 10px;
+            text-align: center; /* Alinear texto al centro */
         }
         .banner {
             width: 100%;
             height: 200px;
             background-image: url('https://th.bing.com/th/id/OIP.o9zqycjv29eeUysrCB3qfgHaE7?rs=1&pid=ImgDetMain');
             background-size: cover;
-            background-position: center;
-            position: relative;
-            z-index: 0; 
+            background-position: top center;
+            border-top-left-radius: 10px; /* Esquinas redondeadas en la parte superior */
+            border-top-right-radius: 10px;
             margin-bottom: 20px;
+            position: relative; /* Posicionamiento relativo para ajuste de z-index */
+            z-index: 1; /* Asegurar que esté arriba de profile-info */
         }
     </style>
 </head>
@@ -113,13 +125,18 @@
         <div class="overlay"></div>
         <div class="content">
             <div class="banner"></div>
-            <h1>Soy una manzana</h1>
-            <h2>Tú no</h2>
             <div class="profile-info">
-                <img src="Imagenes para gifhub/saasas.png" alt="Foto de perfil" class="profile-picture">
+                <div class="profile-picture">
+                    <img src="Imagenes_para_gifhub/saasas.png" alt="Foto de perfil" style="width: 100%; height: 100%; border-radius: 50%;">
+                </div>
                 <div class="profile-details">
+                    <div class="profile-name">
+                        <h1>Soy una manzana</h1>
+                        <h2>Tú no</h2>
+                    </div>
                     <div class="name">Sheo</div>
                     <div class="bio">6 huevos por la mañana</div>
+                    <div class="data-test-id">División de datos de identificación</div>
                 </div>
             </div>
             <iframe
